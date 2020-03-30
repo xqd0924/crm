@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <script src="/static/plugins/jquery/jquery.min.js"></script>
+    <title>注册页面</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h2>用户注册</h2>
+             <form action="" method="post">
+             {% csrf_token %}
+                {% for form in forms %}
+                    <div class="form-group">
+                        <label for="{{ form.auto_id }}">{{ form.label }}</label>
+                        {{ form }} <span class="errors pull-right"></span>
+                    </div>
+                {% endfor %}
+
+                <button>提交</button>{{ errors }}
+            </form>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
